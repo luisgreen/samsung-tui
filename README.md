@@ -9,6 +9,18 @@ work; the interfaces used are standard.
 
 <img width="1434" height="671" alt="image" src="https://github.com/user-attachments/assets/14d15afd-a712-4e94-877b-dd96985f41c9" />
 
+## Background
+
+This started for a small reason: the remote for the bedroom TV was always
+missing. But in my laptop a terminal window was already open, so the remote became 
+a TUI.
+
+It was also built with AI assistance — written in pair-programming style with
+**DeepSeek V4.1 Flash**, which did the bulk of the implementation, debugging and
+docs from the hardware constraints up. The protocol details come from the TV
+itself and from the public Tizen remote-control documentation, not from
+guesswork: every claim in this README was checked against a real set, and the
+limits below are the ones that were actually hit.
 
 ## Why not ADB
 
@@ -29,7 +41,7 @@ on the same LAN. No developer mode is needed — the TV asks once to allow the
 remote connection.
 
 ```sh
-git clone <repo-url> samsung-tui
+git clone https://github.com/luisgreen/samsung-tui.git samsung-tui
 cd samsung-tui
 uv sync
 ```
@@ -205,6 +217,26 @@ uv run python scripts/smoke.py                  # headless UI + config tests
 uv run python scripts/screenshot.py out.svg     # render the UI to SVG
 uv run --with ruff ruff check src scripts
 ```
+
+## Contributing
+
+Contributions are welcome — **forks and pull requests are explicitly invited**.
+Bug reports, model reports ("works on my Q60"), new app IDs, and docs fixes are
+all useful.
+
+1. Fork [luisgreen/samsung-tui](https://github.com/luisgreen/samsung-tui) and
+   open a branch off `main`.
+2. Keep the change focused, and make sure the checks below pass.
+3. Open a pull request describing what changed and, if it is TV-specific, the
+   model and firmware you tested against.
+
+```sh
+uv run python scripts/smoke.py                  # must pass
+uv run --with ruff ruff check src scripts       # must be clean
+```
+
+No CLA, no process beyond the usual review. If you are unsure whether something
+is in scope, open an issue first and ask — that costs nothing.
 
 ## License
 
