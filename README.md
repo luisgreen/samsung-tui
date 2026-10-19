@@ -7,6 +7,9 @@ no cloud, no account, no ADB.
 Verified against a Samsung **CU7000** (2023, Tizen). Other Tizen models should
 work; the interfaces used are standard.
 
+<img width="1434" height="671" alt="image" src="https://github.com/user-attachments/assets/14d15afd-a712-4e94-877b-dd96985f41c9" />
+
+
 ## Why not ADB
 
 Samsung TVs run **Tizen**, not Android. ADB is Android-only and cannot connect
