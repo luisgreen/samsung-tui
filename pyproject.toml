@@ -1,0 +1,18 @@
+[project]
+name = "samsung-tui"
+version = "0.1.0"
+description = "TUI remote control for Samsung Tizen TVs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "textual>=8.2.8",
+    "websocket-client>=1.9.2",
+]
+
+[project.scripts]
+samsung-tui = "samsung_tui.app:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
